@@ -1,4 +1,5 @@
 package model;
 
-public class Override {
+public @interface Override {
+
 }
