@@ -30,7 +30,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/andre/Documents/GitHub/Projet-Final-BattleShip/NavalBattle-1"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -41,7 +42,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667670886456</updated>
-      <workItem from="1667670890549" duration="527000" />
+      <workItem from="1667670890549" duration="786000" />
+      <workItem from="1667827660592" duration="24000" />
+      <workItem from="1667831684592" duration="348000" />
     </task>
     <servers />
   </component>
