@@ -26,7 +26,7 @@ public abstract class Ship {
         this.length = length;
         this.health = length;
         this.firePower = firePower;
-        // cr��r un objet Random pour générer aléatoirement l'orientation de navire
+        // créer un objet Random pour générer aléatoirement l'orientation de navire
         Random rd = new Random();
         this.vertical = rd.nextBoolean();
 
