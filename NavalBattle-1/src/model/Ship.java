@@ -9,13 +9,13 @@ import java.util.Random;
  *
  */
 public abstract class Ship {
-    protected int length;	// nombre de cases occupées par le navire
+    protected int length;	// nombre de cases occup�es par le navire
     protected int health;	// nombre de cases saines
     protected int firePower;	// puissance de tir
-    protected Coordinates position;		// coordonnées de la 1 ère case occupée par le navire
+    protected Coordinates position;		// coordonnées de la 1ère case occupée par le navire
     protected boolean vertical;		// vrai si le navire est placé verticalement, faux sinon
     protected ArrayList<Coordinates> area;	// la liste des coordonnées des cases occupées par le navire
-    protected char ch;	// le caractère représentant le navire
+    protected char ch;	// le caract�re repr�sentant le navire
 
     /**
      * Constructeur
@@ -70,7 +70,7 @@ public abstract class Ship {
     }
 
     /**
-     * @return l'orientation : true si vertical, false si horizontal
+     * @return l'orientation : true si vertical, false si horizental
      */
     public boolean isVertical() {
         return vertical;
@@ -86,7 +86,7 @@ public abstract class Ship {
     }
 
     /**
-     * @return ch : le caractère qui représente le navire
+     * @return ch : le caract�re qui repr�sente le navire
      */
     public char getChar() {
         return ch;
@@ -130,7 +130,7 @@ public abstract class Ship {
 
     /**
      * Modifie la position du navire
-     * @param position (la 1 ère case occupée)
+     * @param position (la 1ère case occupée)
      */
     public void setPosition(Coordinates position) {
         this.position = position;

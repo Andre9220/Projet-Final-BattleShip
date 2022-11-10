@@ -2,13 +2,13 @@ package model;
 
 /**
  * Classe Cruiser qui hérite de la classe Ship
- * Représente un destroyer
+ * Repr�sente un destroyer
  * @author
  *
  */
 public class Destroyer extends Ship {
 
-    // détermine si le destroyer poss�de encore sa fusée éclairante ou non
+    // d�termine si le destroyer poss�de encore sa fus�e �clairante ou non
     private boolean hasFlare;
 
     /**
