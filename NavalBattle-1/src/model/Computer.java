@@ -6,5 +6,19 @@ package model;
  * @author
  *
  */
-public class Computer {
+public class Computer extends Player {
+
+    /**
+     * Constructeur
+     */
+    public Computer() {
+        super("Computer");
+    }
+
+    @Override
+    public String toString() {
+        return super.type;
+    }
+
 }
+/*Done*/

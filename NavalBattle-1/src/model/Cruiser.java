@@ -23,4 +23,7 @@ public class Cruiser extends Ship {
     public String toString() {
         return "Cruiser";
     }
+
+    /*DONE*/
+
 }
