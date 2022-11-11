@@ -42,5 +42,17 @@ public class NavalBattleView {
         System.out.println("Choose an option (1 to 4) : ");
 
     }
-    
+
+    /**
+     * Méthode qui affiche les règles du jeu
+     */
+
+    //à completer
+
+    public void showHelp() {
+        System.out.println("*********************** Game rules ************************");
+
+    }
+
+
 }
