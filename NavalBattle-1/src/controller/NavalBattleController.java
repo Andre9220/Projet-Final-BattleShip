@@ -19,7 +19,7 @@ import view.NavalBattleView;
 
 /**
  *
- * Classe NavalBattleController : la classe qui controle le jeu
+ * Classe NavalBattleController : la classe qui control le jeu
  * et execute les actions du joueur
  * @author
  */
@@ -33,13 +33,13 @@ public class NavalBattleController {
 
 
     /**
-     * M�thode qui permet de Lancer une partie (nouvelle ou charg�e)
+     * Méthode qui permet de Lancer une partie (nouvelle ou chargée)
      */
     /*public void runGame() {}*/
 
 
     /**
-     * M�thode qui permet d'afficher le menu principal et ex�cuter le choix du joueur
+     * Méthode qui permet d'afficher le menu principal et exécuter le choix du joueur
      */
     /*public void start() {}*/
 
@@ -47,7 +47,7 @@ public class NavalBattleController {
 
     /*public void runTurn(int player) {*/
     /**
-     * M�thode qui permet de lancer un tour du jeu
+     * Méthode qui permet de lancer un tour du jeu
      * @param player : le joueur courant (0 pour Human et 1 pour Computer)
      */
 }
