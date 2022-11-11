@@ -14,4 +14,33 @@ import model.Game;
  * @author
  */
 public class NavalBattleView {
+
+    // créer un objet Scanner pour lire les entrée clavier
+    private Scanner sc = new Scanner(System.in);
+
+    /**
+     * Constructeur
+     */
+    public NavalBattleView() {
+
+    }
+
+    /**
+     * Méthode privée qui affiche le menu principal
+     * utilisée par la méthode getMenuOption()
+     */
+    private void showMenu() {
+        System.out.println("*********************************************************************");
+        System.out.println("*******************                               *******************");
+        System.out.println("*******************       Naval Battle Game       *******************");
+        System.out.println("*******************                               *******************");
+        System.out.println("*********************************************************************\n");
+        System.out.println("\t1. Play a game");
+        System.out.println("\t2. Load a game");
+        System.out.println("\t3. Help");
+        System.out.println("\t4. Exit");
+        System.out.println("Choose an option (1 to 4) : ");
+
+    }
+    
 }
