@@ -1,3 +1,9 @@
+/**
+ * Classe Board qui représente une grille du jeu
+ * @author
+ *
+ */
+
 package model;
 
 public class Board {
@@ -12,7 +18,7 @@ public class Board {
      * @param ch
      * Permet d'initialiser un plateau de jeu avec le bon nombre de lignes et de colonnes
      */
-    Board(int nbrRows, int nbrCols, char ch) {
+    public Board(int nbrRows, int nbrCols, char ch) {
         this.nbrRows = nbrRows;
         this.nbrCols = nbrCols;
         // initialise les valeurs de la matrice
@@ -43,7 +49,15 @@ public class Board {
     }
 
     public Coordinates getCoor(Coordinates coor) {
+        for(int i=0; i<nbrRows; i++) {
+            for (int j=0; j<nbrCols; j++) {
+                if (grid[i][j].equals(coor))
+                    return grid[i][j];
+            }
+        }
         return null;
     }
+
+    /* done */
 
 }
