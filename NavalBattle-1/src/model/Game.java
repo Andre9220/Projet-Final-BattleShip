@@ -12,4 +12,5 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class Game {
+    public Player human, computer;
 }
