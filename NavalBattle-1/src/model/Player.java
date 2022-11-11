@@ -17,9 +17,38 @@ public class Player {
     int shipCounter;	// compteur de navires
 
 
-    /* add the constructeur*/
 
 
+    protected Player(String type) {
+        this.type = type;
+
+        // instancier les deux grilles
+        this.ownGrid = new Board(Constantes.GRID_ROWS, Constantes.GRID_COLS, Constantes.GRID_CHARS);
+        this.enemyGrid = new Board(Constantes.GRID_ROWS, Constantes.GRID_COLS, Constantes.GRID_CHARS);
+
+        // initialiser la flotte
+        this.fleet = new Ship[Constantes.FLEET_SIZE];
+        shipCounter = 0;
+        for (int i = 0; i<Constantes.IRONCLAD_NBR; i++) {
+            this.fleet[shipCounter] = new Ironclad();
+            shipCounter++;
+        }
+        for (int i = 0; i<Constantes.CRUISER_NBR; i++) {
+            this.fleet[shipCounter] = new Cruiser();
+            shipCounter++;
+        }
+        for (int i = 0; i<Constantes.DESTROYER_NBR; i++) {
+            this.fleet[shipCounter] = new Destroyer();
+            shipCounter++;
+        }
+        for (int i = 0; i<Constantes.SUBMARINE_NBR; i++) {
+            this.fleet[shipCounter] = new Submarine();
+            shipCounter++;
+        }
+    }
+
+
+    /*Faire la méthode pour placer les bateaux*/
 
 
 

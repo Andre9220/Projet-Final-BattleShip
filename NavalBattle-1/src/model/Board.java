@@ -24,12 +24,13 @@ public class Board {
         }
     }
 
+
     /**
      * Modifie la valeur "destroyed" de la case ver "vrai"
      * @param coor : la case dans la grille (matrice)
      */
     public void destroy(Coordinates coor) {
-
+        grid[coor.getRow()][coor.getCol()].destroy();
     }
 
     /**
@@ -38,7 +39,7 @@ public class Board {
      * @param ch
      */
     public void setChar(Coordinates coor, char ch) {
-
+        grid[coor.getRow()][coor.getCol()].setCh(ch);  //
     }
 
     public Coordinates getCoor(Coordinates coor) {
