@@ -35,8 +35,11 @@ public class NavalBattleController {
     /**
      * Constructeur
      */
-    /*public NavalBattleController() {}*/
-
+    public NavalBattleController() {
+        this.battleView = new NavalBattleView();	// instancier l'objet battleView
+        this.game = new Game();						// instancier l'objet game
+        quit = false;
+    }
 
     /**
      * Méthode qui permet de Lancer une partie (nouvelle ou chargée)
