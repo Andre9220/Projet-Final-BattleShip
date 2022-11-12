@@ -8,7 +8,7 @@ package model;
  */
 public class Destroyer extends Ship {
 
-    // d�termine si le destroyer poss�de encore sa fus�e �clairante ou non
+    // détermine si le destroyer possède encore sa fusée éclairante ou non
     private boolean hasFlare;
 
     /**
