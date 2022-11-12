@@ -152,7 +152,7 @@ public class NavalBattleController {
             }
 
         } else {	// si le navire est placé horizontalement dans la grille
-            // et si le d�placement est vers Gauche
+            // et si le déplacement est vers Gauche
             if (moveBy == -1) {
                 if (y == 0)		// si le navire est déjà placé dans la 1 ère colonne,
                     // le déplacement est donc impossible
