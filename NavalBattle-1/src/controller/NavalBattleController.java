@@ -61,6 +61,41 @@ public class NavalBattleController {
      */
 
 
+
+    /**
+     * Méthode qui renvoie la liste des cases touchées par un tir de navire
+     * @param ship : le navire qui tire
+     * @param coor : les coordonnées de la case cible
+     * @return une liste de coordonnées de cases qui représente la zone touchée par le tir
+     */
+    private ArrayList<Coordinates> getShootArea(Ship ship, Coordinates coor) {
+        ArrayList<Coordinates> area = new ArrayList<Coordinates>();
+        if (ship instanceof Ironclad) {	// si le navire est un Cuirassé
+            // prendre les 3 lignes (haut de la cible, la cible et bas de la cible)
+            for (int i=coor.getRow()-1; i<=coor.getRow()+1; i++)
+                if (i>=0 && i<Constantes.GRID_ROWS)
+                    // pour chaque ligne prendre les 3 colonnes (gauche de la cible, la cible et droite de la cible)
+                    for (int j=coor.getCol()-1; j<=coor.getCol()+1; j++)
+                        if (j>=0 && j<Constantes.GRID_COLS)
+                            area.add(new Coordinates(i, j));	// ajouter à la liste area
+
+        } else if (ship instanceof Cruiser) { // si le navire est un Croiseur
+            // prendre les 2 lignes (la cible et bas de la cible)
+            for (int i=coor.getRow(); i<=coor.getRow()+1; i++)
+                if (i<Constantes.GRID_ROWS)
+                    // pour chaque ligne prendre les 2 colonnes (la cible et droite de la cible)
+                    for (int j=coor.getCol(); j<=coor.getCol()+1; j++)
+                        if (j<Constantes.GRID_COLS)
+                            area.add(new Coordinates(i, j));	// ajouter à la liste area
+
+        } else {		// sinon (le navire est un Destroyer ou un Sous-marin)
+            // dans ce cas, seule la case ciblée sera touché
+            area.add(coor);
+        }
+        return area;
+    }
+
+
     /**
      * Méthode qui determine si le joueur a un navire non touch�
      * @param player : le joueur courant
@@ -131,7 +166,7 @@ public class NavalBattleController {
                 // et si le navire est placé à la limite de la grille, le déplacement est donc impossible
                 if (y+ship.getLength()+1 > board.nbrCols)
                     return false;
-                // sinon, si la case � droite n'est pas vide, le déplacement n'est pas permis
+                // sinon, si la case à droite n'est pas vide, le déplacement n'est pas permis
                 if (board.grid[x][y+ship.getLength()].getCh()!=Constantes.GRID_CHARS)
                     return false;
             }
