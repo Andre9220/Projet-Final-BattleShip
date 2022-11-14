@@ -89,4 +89,44 @@ public class NavalBattleView {
     }
 
 
+    /**
+     * Méthode pour afficher les deux grilles du joueur human
+     * @param game
+     * @param playerIndex
+     * @param isFlare : determine si la grille Ennemi doit etre dévoilé (4 cases de la cible)
+     * @param CoorFlare : (la cible si c'est une fusée éclairante)
+     */
+    public void showGrids(Game game, int playerIndex, boolean isFlare, Coordinates CoorFlare) {
+        String horSepOwnGrid = (new String("----")).repeat(game.human.getOwnGrid().nbrCols+1);
+        String horSepEnnGrid = (new String("----")).repeat(game.human.getEnemyGrid().nbrCols+1);
+        String separator = "\n"+horSepOwnGrid+"      "+horSepEnnGrid+"\n";
+        System.out.printf("%30s  %60s\n\n", "My grid", "Ennemy grid");
+        System.out.print("  |");
+        for (int i=0; i<game.human.getOwnGrid().nbrCols; i++) {
+            System.out.printf(" %-2d|", (i+1));
+        }
+        System.out.print("         |");
+        for (int i=0; i<game.human.getEnemyGrid().nbrCols; i++) {
+            System.out.printf(" %-2d|", (i+1));
+        }
+        System.out.print(separator);
+        for (int i=0; i<game.human.getOwnGrid().nbrRows; i++) {
+            System.out.printf("%-2d|", i+1);
+            for (int j=0; j<game.human.getOwnGrid().nbrCols; j++) {
+                System.out.printf(" %-2c|", game.human.getOwnGrid().grid[i][j].getCh());
+            }
+            System.out.print("       ");
+            System.out.printf("%-2d|", i+1);
+            for (int j=0; j<game.human.getEnemyGrid().nbrCols; j++) {
+                if (playerIndex==0 && isFlare && (i==CoorFlare.getRow() || i==CoorFlare.getRow()-1)
+                        && (j==CoorFlare.getCol() || j==CoorFlare.getCol()-1))
+                    System.out.printf(" %-2c|", game.computer.getOwnGrid().grid[i][j].getCh());
+                else
+                    System.out.printf(" %-2c|", game.human.getEnemyGrid().grid[i][j].getCh());
+            }
+            System.out.print(separator);
+        }
+    }
+
+
 }

@@ -52,10 +52,11 @@ public class Player {
      * Méthode qui permet de placer aléatoirement
      * les navires du joueur sur sa propre grille
      */
+
     public void placeShips() {
         // parcourir la liste des navires
         for (int i=0; i<shipCounter; i++) {
-            boolean canPlace = false;	// determine si le navire peut etre plac� ou non
+            boolean canPlace = false;	// determine si le navire peut etre placé ou non
             int x, y;
             int l = fleet[i].getLength();
             // répéter tant que le navire ne peut pas etre placé
@@ -90,7 +91,7 @@ public class Player {
                 canPlace = !isOccuped(c);
             } while (!canPlace);	// tant qu'on a rencontré un obstacle (case occupée), on repète
 
-            // mettre � jour les cases de la grille du joueur
+            // mettre à jour les cases de la grille du joueur
             for (int j=0; j<fleet[i].area.size(); j++) {
                 ownGrid.setChar(fleet[i].area.get(j), fleet[i].getChar());
             }
@@ -103,6 +104,7 @@ public class Player {
      * @param coor : les coordonnées de la case
      * @return vrai si l'un des navires de la flotte occupe la case coor, faux sinon
      */
+
     private boolean isOccuped(Coordinates coor) {
         for (int i=0; i<shipCounter; i++) {
             if (fleet[i].area.contains(coor))
@@ -114,6 +116,7 @@ public class Player {
     /**
      * @return la grilles du joueur
      */
+
     public Board getOwnGrid() {
         return ownGrid;
     }
@@ -128,6 +131,7 @@ public class Player {
     /**
      * @return la flotte du joueur
      */
+
     public Ship[] getFleet() {
         return fleet;
     }
@@ -135,6 +139,7 @@ public class Player {
     /**
      * @return le nombre de navires dans la flotte
      */
+
     public int getShipCounter() {
         return shipCounter;
     }
@@ -144,6 +149,7 @@ public class Player {
      * @return : le navire dans la flotte qui occupe la case coor,
      * 			null si aucun navire ne l'occupe
      */
+
     public Ship getShipFromCoor(Coordinates coor) {
         for (int i=0; i<fleet.length; i++) {
             if (fleet[i].occupe(coor))
@@ -156,6 +162,7 @@ public class Player {
      * Modifie la valeur du champ "destroyed" dans la case de la grille
      * @param coor : la case concern�e
      */
+
     public void destroyAt(Coordinates coor) {
         ownGrid.destroy(coor);
     }
@@ -170,5 +177,7 @@ public class Player {
         }
         return health;
     }
+
+    /*done*/
 
 }
