@@ -24,6 +24,15 @@ public class Game {
     }
 
     /**
+     * Méthode qui initialise (à tester)
+     */
+    public void initialize() {
+        // placer les navires dans les grilles de chaque joueur
+        human.placeShips();
+        computer.placeShips();
+    }
+
+    /**
      * détermine si l'une des flottes des deux joueurs est coulée
      * @return vrai si l'une des flottes des deux joueurs est coulée, faux sinon
      */
