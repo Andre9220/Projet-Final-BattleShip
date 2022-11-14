@@ -1,6 +1,5 @@
 package view;
 
-
 import java.util.Scanner;
 
 import model.Constantes;
@@ -14,7 +13,6 @@ import model.Game;
  * @author
  */
 public class NavalBattleView {
-
     // créer un objet Scanner pour lire les entrée clavier
     private Scanner sc = new Scanner(System.in);
 
@@ -48,10 +46,7 @@ public class NavalBattleView {
      * @return le choix de l'utilisateur (4 si le choix = 'q' ou 'Q')
      */
     public int getMenuOption() {
-
-        String strChoice;
-        int choice = 0;
-
+        String strChoice; int choice = 0;
         do {
             showMenu();
             strChoice = sc.nextLine();
@@ -78,18 +73,18 @@ public class NavalBattleView {
     }
 
     /**
-     * Méthode qui affiche les règles du jeu
+     * Méthode qui permet d'afficher l'action réalisée par le joueur Computer lors du tir
+     * (tir ou fusée éclairante, et les coordonnées de la cible)
+     * @param targetCoor
+     * @param isFlare
      */
-
-    //à completer
-
-    public void showHelp() {
-        System.out.println("*********************** Game rules ************************");
-        System.out.println("Ce jeu représente un jeu de bataille navale où le but est de couler entièrement la flotte annemie" +
-                "Vous avez exactement la même flotte que l'adversaire, mais chose qui diffère du jeu original est que vous pouvez déplacer vos navires dans le sens sur lequel il est" +
-                "si ils n'ont pas été touché. Chaque navire à une puissance de tir respectif. Ironclad : 9 cases, Cruiser : 4 cases" +
-                "Destroyeur et Submarine on tout les deux une puissance de 1 case. Vous pouvez sauvegardé votre partie en appuyant sur q ou Q à tout moment");
-
+    public void showCompAction(boolean isFlare, Coordinates targetCoor) {
+        String s = "Computer";
+        if (isFlare)
+            s += " flare";
+        else
+            s += " shoot";
+        System.out.printf("%s at target : (%d, %d)\n", s, targetCoor.getRow()+1, targetCoor.getCol()+1);
     }
 
     /**
@@ -100,6 +95,86 @@ public class NavalBattleView {
      */
     private void askShipCoor(String message, int min, int max) {
         System.out.printf(message, min, max);
+    }
+
+    /**
+     * Méthode pour afficher le menu d'action (tir ou déplacement)
+     * et lire le choix du joueur
+     * @return (1 pour d�élacement ou 2 pour tir, et -1 si le joueur tape 'q')
+     */
+    public int getMoveOrFire() {
+        String strChoice; int choice = 0;
+        do {
+            System.out.println("\t1. Move ship");
+            System.out.println("\t2. Fire");
+            System.out.println("Choose an action (1 or 2) : ");
+            strChoice = sc.nextLine();
+            if (strChoice.equalsIgnoreCase("q")) {
+                choice = -1;
+                break;
+            }
+            else {
+                try {
+                    choice = Integer.valueOf(strChoice);
+                } catch (Exception e) {
+                    showMessage("invalid choice! try again");
+                }
+            }
+        } while (choice < 1 || choice > 2);
+        return choice;
+    }
+
+    /**
+     * Méthode pour afficher le menu de direction (Up/Down ou Left/Right)
+     * et lire le choix du joueur
+     * @param isVertical
+     * @return si le navire est plac� verticalement : 1 pour UP et 2 pour DOWN
+     * 		   sinon : 1 pour LEFT et 2 pour RIGHT,
+     * @return -1 si le joueur tape 'q' ou 'Q'
+     */
+    public int getMoveBy(boolean isVertical) {
+        String strChoice; int choice = 0;
+        if (isVertical) {
+            do {
+                System.out.println("\t1. Move UP");
+                System.out.println("\t2. Move DOWN");
+                System.out.println("Choose a direction (1 or 2) : ");
+                strChoice = sc.nextLine();
+                if (strChoice.equalsIgnoreCase("q")) {
+                    choice = -1;
+                    break;
+                }
+                else {
+                    try {
+                        choice = Integer.valueOf(strChoice);
+                    } catch (Exception e) {
+                        showMessage("invalid choice! try again");
+                    }
+                }
+            } while (choice < 1 || choice > 2);
+        } else {
+            do {
+                System.out.println("\t1. Move LEFT");
+                System.out.println("\t2. Move RIGHT");
+                System.out.println("Choose a direction (1 or 2) : ");
+                strChoice = sc.nextLine();
+                if (strChoice.equalsIgnoreCase("q")) {
+                    choice = -1;
+                    break;
+                }
+                else {
+                    try {
+                        choice = Integer.valueOf(strChoice);
+                    } catch (Exception e) {
+                        showMessage("invalid choice! try again");
+                    }
+                }
+            } while (choice < 1 || choice > 2);
+        }
+        if (choice == -1)
+            return 0;
+        else
+            return choice == 1 ? -1 : 1;
     }
 
     /**
@@ -152,13 +227,12 @@ public class NavalBattleView {
         return choice;
     }
 
-
     /**
      * Méthode pour afficher les deux grilles du joueur human
      * @param game
      * @param playerIndex
-     * @param isFlare : determine si la grille Ennemi doit etre dévoilé (4 cases de la cible)
-     * @param CoorFlare : (la cible si c'est une fusée éclairante)
+     * @param isFlare : determine si la grille Ennemi doit etre d�voil� (4 cases de la cible)
+     * @param CoorFlare : (la cible si c'est une fus�e �clairante)
      */
     public void showGrids(Game game, int playerIndex, boolean isFlare, Coordinates CoorFlare) {
         String horSepOwnGrid = (new String("----")).repeat(game.human.getOwnGrid().nbrCols+1);
@@ -192,5 +266,15 @@ public class NavalBattleView {
         }
     }
 
+    /**
+     * Méthode qui affiche les règles du jeu
+     */
+    public void showHelp() {
+        System.out.println("*** Game rules **");
+        System.out.println("Ce jeu représente un jeu de bataille navale où le but est de couler entièrement la flotte annemie" +
+                "Vous avez exactement la même flotte que l'adversaire, mais chose qui diffère du jeu original est que vous pouvez déplacer vos navires dans le sens sur lequel il est" +
+                "si ils n'ont pas été touché. Chaque navire à une puissance de tir respectif. Ironclad : 9 cases, Cruiser : 4 cases" +
+                "Destroyeur et Submarine on tout les deux une puissance de 1 case. Vous pouvez sauvegardé votre partie en appuyant sur q ou Q à tout moment");
 
+    }
 }
