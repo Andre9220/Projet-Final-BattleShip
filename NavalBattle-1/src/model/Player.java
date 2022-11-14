@@ -48,7 +48,54 @@ public class Player {
     }
 
 
-    /*Faire la méthode pour placer les bateaux*/
+    /**
+     * Méthode qui permet de placer aléatoirement
+     * les navires du joueur sur sa propre grille
+     */
+    public void placeShips() {
+        // parcourir la liste des navires
+        for (int i=0; i<shipCounter; i++) {
+            boolean canPlace = false;	// determine si le navire peut etre plac� ou non
+            int x, y;
+            int l = fleet[i].getLength();
+            // répéter tant que le navire ne peut pas etre placé
+            do {
+                fleet[i].area.clear();	// vider la zone occupé
+                Random rd = new Random();
+
+                // générer des coordonnées de position selon l'orientation du navire
+                if (fleet[i].isVertical()) {
+                    x = rd.nextInt(Constantes.GRID_ROWS-l+1);
+                    y = rd.nextInt(Constantes.GRID_COLS);
+                } else {
+                    x = rd.nextInt(Constantes.GRID_ROWS);
+                    y = rd.nextInt(Constantes.GRID_COLS-l+1);
+                }
+                Coordinates c = new Coordinates(x, y, fleet[i].getChar());
+                fleet[i].setPos(c);
+                int counter = 0;
+                // parcourir les cases qui vont etre occupées par le navire
+                // et voir si elles sont vides, sinon on refait le travail avec
+                // une autre position
+                while (x<Constantes.GRID_ROWS && y<Constantes.GRID_COLS && counter<l && !isOccuped(c)) {
+                    fleet[i].area.add(c);	// ajouter la case à la zone occupée tant qu'elle est vide
+                    if (fleet[i].isVertical()) {
+                        x++;
+                    } else {
+                        y++;
+                    }
+                    c = new Coordinates(x, y, fleet[i].getChar());
+                    counter++;
+                }
+                canPlace = !isOccuped(c);
+            } while (!canPlace);	// tant qu'on a rencontré un obstacle (case occupée), on repète
+
+            // mettre � jour les cases de la grille du joueur
+            for (int j=0; j<fleet[i].area.size(); j++) {
+                ownGrid.setChar(fleet[i].area.get(j), fleet[i].getChar());
+            }
+        }
+    }
 
 
 
