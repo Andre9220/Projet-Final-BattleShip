@@ -85,7 +85,71 @@ public class NavalBattleView {
 
     public void showHelp() {
         System.out.println("*********************** Game rules ************************");
+        System.out.println("Ce jeu représente un jeu de bataille navale où le but est de couler entièrement la flotte annemie" +
+                "Vous avez exactement la même flotte que l'adversaire, mais chose qui diffère du jeu original est que vous pouvez déplacer vos navires dans le sens sur lequel il est" +
+                "si ils n'ont pas été touché. Chaque navire à une puissance de tir respectif. Ironclad : 9 cases, Cruiser : 4 cases" +
+                "Destroyeur et Submarine on tout les deux une puissance de 1 case. Vous pouvez sauvegardé votre partie en appuyant sur q ou Q à tout moment");
 
+    }
+
+    /**
+     * Méthode privée utilisée pour demander une valeur dans une intervalle
+     * @param message
+     * @param min : valeur minimale
+     * @param max : valeur maximale
+     */
+    private void askShipCoor(String message, int min, int max) {
+        System.out.printf(message, min, max);
+    }
+
+    /**
+     * Méthode pour demander et lire le numéro de ligne d'une coordonnée
+     * @param s : le message à afficher
+     * @return le numéro de ligne, ou -1 si le joueur tape 'q' ou 'Q'
+     */
+    public int getRow(String s) {
+        String strChoice; int choice = 0;
+        do {
+            askShipCoor("Type the "+s+" row (%d to %d) : ", 1, Constantes.GRID_ROWS);
+            strChoice = sc.nextLine();
+            if (strChoice.equalsIgnoreCase("q")) {
+                choice = -1;
+                break;
+            }
+            else {
+                try {
+                    choice = Integer.valueOf(strChoice);
+                } catch (Exception e) {
+                    showMessage("invalid choice! try again");
+                }
+            }
+        } while (choice < 1 || choice > Constantes.GRID_ROWS);
+        return choice;
+    }
+
+    /**
+     * Méthode pour demander et lire le numéro de colonne d'une coordonnée
+     * @param s : le message à afficher
+     * @return le numéro de ligne, ou -1 si le joueur tape 'q' ou 'Q'
+     */
+    public int getCol(String s) {
+        String strChoice; int choice = 0;
+        do {
+            askShipCoor("Type the "+s+" column (%d to %d) : ", 1, Constantes.GRID_COLS);
+            strChoice = sc.nextLine();
+            if (strChoice.equalsIgnoreCase("q")) {
+                choice = -1;
+                break;
+            }
+            else {
+                try {
+                    choice = Integer.valueOf(strChoice);
+                } catch (Exception e) {
+                    showMessage("invalid choice! try again");
+                }
+            }
+        } while (choice < 1 || choice > Constantes.GRID_COLS);
+        return choice;
     }
 
 
