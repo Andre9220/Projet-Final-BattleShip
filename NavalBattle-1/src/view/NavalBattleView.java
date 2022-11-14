@@ -270,10 +270,10 @@ public class NavalBattleView {
      */
     public void showHelp() {
         System.out.println("*** Game rules **");
-        System.out.println("Ce jeu représente un jeu de bataille navale où le but est de couler entièrement la flotte annemie" +
-                "Vous avez exactement la même flotte que l'adversaire, mais chose qui diffère du jeu original est que vous pouvez déplacer vos navires dans le sens sur lequel il est" +
-                "si ils n'ont pas été touché. Chaque navire à une puissance de tir respectif. Ironclad : 9 cases, Cruiser : 4 cases" +
-                "Destroyeur et Submarine on tout les deux une puissance de 1 case. Vous pouvez sauvegardé votre partie en appuyant sur q ou Q à tout moment");
+        System.out.println("Ce jeu représente un jeu de bataille navale où le but est de couler entièrement la flotte annemie \n" +
+                "Vous avez exactement la même flotte que l'adversaire, mais chose qui diffère du jeu original est que vous pouvez déplacer vos navires dans le sens sur lequel il est \n" +
+                "si ils n'ont pas été touché. Chaque navire à une puissance de tir respectif. Ironclad : 9 cases, Cruiser : 4 cases \n" +
+                "Destroyeur et Submarine on tout les deux une puissance de 1 case. Vous pouvez sauvegardé votre partie en appuyant sur q ou Q à tout moment \n");
 
     }
 }

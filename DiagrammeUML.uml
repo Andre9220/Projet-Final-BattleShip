@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/andre/Documents/GitHub/Projet-Final-BattleShip/NavalBattle-1/src</OriginalElement>
+  <nodes>
+    <node x="269.02141572763" y="-104.26850231086576">model.Override</node>
+    <node x="-41.85284680924315" y="1922.731497689134">controller.NavalBattleController</node>
+    <node x="712.02141572763" y="846.7314976891341">model.Destroyer</node>
+    <node x="543.02141572763" y="868.7314976891341">model.Submarine</node>
+    <node x="374.02141572763" y="868.7314976891341">model.Cruiser</node>
+    <node x="406.5125661701078" y="-35.26850231086587">model.Coordinates</node>
+    <node x="420.52141572763" y="1430.7314976891341">model.Human</node>
+    <node x="-23.852846809243147" y="505.73149768913413">model.Board</node>
+    <node x="184.52141572763003" y="-33.423033693293974">model.Constantes</node>
+    <node x="266.52141572763" y="1638.7314976891341">model.Game</node>
+    <node x="-100.47858427236997" y="1561.7314976891341">view.NavalBattleView</node>
+    <node x="251.52141572763003" y="1430.7314976891341">model.Computer</node>
+    <node x="178.02141572763003" y="868.7314976891341">model.Ironclad</node>
+    <node x="381.4967107128807" y="349.73149768913413">model.Ship</node>
+    <node x="233.02141572763003" y="1031.7314976891341">model.Player</node>
+    <node x="74.64715319075685" y="2203.731497689134">main.Driver</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="model.Player" target="model.Ironclad" relationship="CREATE">
+      <point x="-115.5" y="-172.5" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="model.Human" target="model.Player" relationship="GENERALIZATION">
+      <point x="-4.157276300134072E-4" y="-38.500497689134136" />
+      <point x="495.021" y="1404.0" />
+      <point x="368.021" y="1404.0" />
+      <point x="-4.157276300134072E-4" y="172.49950231086586" />
+    </edge>
+    <edge source="model.Board" target="model.Coordinates" relationship="TO_MANY">
+      <point x="-130.00015319075686" y="-4.976891341357259E-4" />
+      <point x="-64.0" y="566.231" />
+      <point x="-64.0" y="111.231" />
+      <point x="-103.99956617010781" y="-15.000497689134136" />
+    </edge>
+    <edge source="model.Submarine" target="model.Ship" relationship="GENERALIZATION">
+      <point x="-13.524415727630071" y="-38.500497689134136" />
+      <point x="603.997" y="851.231" />
+      <point x="351.0" y="851.231" />
+      <point x="351.0" y="566.231" />
+      <point x="-114.9997107128807" y="-4.976891341357259E-4" />
+    </edge>
+    <edge source="model.Player" target="model.Ship" relationship="CREATE">
+      <point x="135.0" y="15.0" />
+      <point x="908.52141572763" y="1219.2314976891341" />
+      <point x="908.52141572763" y="551.2314976891341" />
+      <point x="115.0" y="-15.0" />
+    </edge>
+    <edge source="controller.NavalBattleController" target="model.Game" relationship="CREATE">
+      <point x="192.0" y="-115.5" />
+      <point x="-18.374262536873175" y="72.5" />
+    </edge>
+    <edge source="controller.NavalBattleController" target="view.NavalBattleView" relationship="TO_ONE">
+      <point x="0.0" y="-115.5" />
+      <point x="84.62573746312682" y="149.5" />
+    </edge>
+    <edge source="model.Ship" target="model.Coordinates" relationship="TO_MANY">
+      <point x="-114.9997107128807" y="-78.00049768913414" />
+      <point x="-64.0" y="488.231" />
+      <point x="-64.0" y="111.231" />
+      <point x="-103.99956617010781" y="-15.000497689134136" />
+    </edge>
+    <edge source="model.Destroyer" target="model.Ship" relationship="GENERALIZATION">
+      <point x="-82.00041572763007" y="-56.000497689134136" />
+      <point x="351.0" y="851.231" />
+      <point x="351.0" y="566.231" />
+      <point x="-114.9997107128807" y="-4.976891341357259E-4" />
+    </edge>
+    <edge source="model.Game" target="model.Player" relationship="TO_ONE">
+      <point x="101.5" y="0.0" />
+      <point x="632.52141572763" y="1711.2314976891341" />
+      <point x="632.52141572763" y="1249.2314976891341" />
+      <point x="135.0" y="45.0" />
+    </edge>
+    <edge source="model.Player" target="model.Board" relationship="CREATE">
+      <point x="-135.0" y="-110.23149768913413" />
+      <point x="121.147" y="1094.0" />
+      <point x="14.999846809243152" y="60.5" />
+    </edge>
+    <edge source="model.Player" target="model.Coordinates" relationship="CREATE">
+      <point x="-135.00041572763004" y="-4.976891341357259E-4" />
+      <point x="63.0" y="1204.231" />
+      <point x="63.0" y="1094.0" />
+      <point x="-41.353" y="1094.0" />
+      <point x="-41.353" y="126.231" />
+      <point x="-103.99956617010781" y="-4.976891341357259E-4" />
+    </edge>
+    <edge source="model.Computer" target="model.Player" relationship="GENERALIZATION">
+      <point x="-4.157276300134072E-4" y="-38.500497689134136" />
+      <point x="326.021" y="1404.0" />
+      <point x="368.021" y="1404.0" />
+      <point x="-4.157276300134072E-4" y="172.49950231086586" />
+    </edge>
+    <edge source="model.Ironclad" target="model.Ship" relationship="GENERALIZATION">
+      <point x="74.49958427236999" y="-4.976891341357259E-4" />
+      <point x="351.0" y="907.231" />
+      <point x="351.0" y="566.231" />
+      <point x="-114.9997107128807" y="-4.976891341357259E-4" />
+    </edge>
+    <edge source="controller.NavalBattleController" target="model.Coordinates" relationship="TO_ONE">
+      <point x="-199.50015319075686" y="14.999502310866319" />
+      <point x="-132.979" y="2053.231" />
+      <point x="-132.979" y="740.0" />
+      <point x="-64.0" y="740.0" />
+      <point x="-64.0" y="111.231" />
+      <point x="-103.99956617010781" y="-15.000497689134136" />
+    </edge>
+    <edge source="model.Game" target="model.Computer" relationship="CREATE">
+      <point x="-42.0" y="-72.5" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="model.Board" target="model.Coordinates" relationship="CREATE">
+      <point x="-1.5319075684772088E-4" y="60.499502310865864" />
+      <point x="106.147" y="1094.0" />
+      <point x="-41.353" y="1094.0" />
+      <point x="-41.353" y="126.231" />
+      <point x="-103.99956617010781" y="-4.976891341357259E-4" />
+    </edge>
+    <edge source="model.Player" target="model.Ship" relationship="TO_MANY">
+      <point x="135.0" y="0.0" />
+      <point x="893.52141572763" y="1204.2314976891341" />
+      <point x="893.52141572763" y="566.2314976891341" />
+      <point x="115.0" y="0.0" />
+    </edge>
+    <edge source="main.Driver" target="controller.NavalBattleController" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="model.Game" target="model.Coordinates" relationship="CREATE">
+      <point x="-4.157276300134072E-4" y="-72.50049768913414" />
+      <point x="368.021" y="1525.231" />
+      <point x="63.0" y="1525.231" />
+      <point x="63.0" y="1094.0" />
+      <point x="-41.353" y="1094.0" />
+      <point x="-41.353" y="126.231" />
+      <point x="-103.99956617010781" y="-4.976891341357259E-4" />
+    </edge>
+    <edge source="model.Player" target="model.Cruiser" relationship="CREATE">
+      <point x="80.5" y="-172.5" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="controller.NavalBattleController" target="view.NavalBattleView" relationship="CREATE">
+      <point x="-84.62573746312682" y="-115.5" />
+      <point x="0.0" y="149.5" />
+    </edge>
+    <edge source="controller.NavalBattleController" target="model.Coordinates" relationship="CREATE">
+      <point x="-199.50015319075686" y="-4.976891339083522E-4" />
+      <point x="-117.979" y="2038.231" />
+      <point x="-117.979" y="1094.0" />
+      <point x="-41.353" y="1094.0" />
+      <point x="-41.353" y="126.231" />
+      <point x="-103.99956617010781" y="-4.976891341357259E-4" />
+    </edge>
+    <edge source="model.Cruiser" target="model.Ship" relationship="GENERALIZATION">
+      <point x="-74.50041572763001" y="-4.976891341357259E-4" />
+      <point x="351.0" y="907.231" />
+      <point x="351.0" y="566.231" />
+      <point x="-114.9997107128807" y="-4.976891341357259E-4" />
+    </edge>
+    <edge source="model.Player" target="model.Board" relationship="TO_ONE">
+      <point x="-135.0" y="-125.23149768913413" />
+      <point x="136.147" y="1079.0" />
+      <point x="29.999846809243138" y="60.5" />
+    </edge>
+    <edge source="model.Player" target="model.Submarine" relationship="CREATE">
+      <point x="135.0" y="-15.0" />
+      <point x="617.52141572763" y="1189.2314976891341" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="controller.NavalBattleController" target="model.Game" relationship="TO_ONE">
+      <point x="177.0" y="-115.5" />
+      <point x="-33.374262536873175" y="72.5" />
+    </edge>
+    <edge source="model.Player" target="model.Destroyer" relationship="CREATE">
+      <point x="135.0" y="30.0" />
+      <point x="794.02141572763" y="1234.2314976891341" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="model.Game" target="model.Human" relationship="CREATE">
+      <point x="94.0" y="-72.5" />
+      <point x="-33.0" y="38.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.40108327322725534" showDependencies="true" x="-5.219767916016053" y="1145.3389657977968" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
