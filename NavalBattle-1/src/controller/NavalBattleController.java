@@ -44,22 +44,110 @@ public class NavalBattleController {
     /**
      * Méthode qui permet de Lancer une partie (nouvelle ou chargée)
      */
-    /*public void runGame() {}*/
+
+    public void runGame() {
+        battleView.showGrids(game, 0, false, null);	// afficher les grilles au joueur humain
+        // répéter tant qu'il n y a pas encore de gagnant et le joueur poursuit le jeu
+        do {
+
+            runTurn(game.currentPlayer);	// lancer un tour du jeu pour le joueur courant
+
+            if (!quit)		// si pas d'interruption du jeu, on passe le tour à l'autre joueur et on répète
+                game.currentPlayer = (game.currentPlayer+1) % 2;  // 0 si currentPlayer=1 et 1 si currentPlayer=0
+        } while (game.winner == null && !quit);
+
+        if (quit) {	// si le joueur interrompe le jeu
+            // la partie est sauvegardée
+            try {
+                game.saveToFile(Constantes.GAME_FILE);
+            } catch (IOException e) {
+                // afficher un message d'erreur en cas d'échec d'écriture dans le fichier
+                battleView.showMessage("Error saving Game : "+e.getMessage());;
+            }
+        }
+    }
 
 
     /**
      * Méthode qui permet d'afficher le menu principal et exécuter le choix du joueur
      */
-    /*public void start() {}*/
+    public void start() {
+        // répéter en boucle jusqu'à choisir l'option 4 qui arrete le programme
+        do {
+            quit = false;
+            int choice = battleView.getMenuOption();	// afficher le menu et avoir le choix du joueur
+            // selon la valeur de choice
+            switch (choice) {
 
+                case 1: // lancer une nouvelle partie
+                    game.initialize();	// initialiser la partie
+                    game.currentPlayer = (new Random()).nextInt(2);	// choisir aléatoirement le joueur qui commence(0 ou 1)
+                    battleView.showMessage("************************* New Game **************************");
+                    runGame();	// lancer la partie
+                    break;
 
+                case 2: // charger une partie
+                    try {
+                        game.loadFromFile(Constantes.GAME_FILE);  // charger � partir du fichier
+                        game.currentPlayer = 0;		// le tour est au humain puisque c'est lui qui a interrompu le jeu
+                        battleView.showMessage("************************* Game loaded *************************");
+                        runGame();	// relancer la partie à partir du point de sauvegarde
+                    } catch (IOException e) {
+                        // afficher un message d'erreur en cas d'echéc de lecture à partir du fichier
+                        battleView.showMessage("Error loading game : "+e.getMessage());
+                    }
+                    break;
 
-    /*public void runTurn(int player) {*/
+                case 3: // Afficher l'aide
+                    battleView.showHelp();
+                    break;
+
+                case 4: // Quitter le programme
+                    System.exit(0);
+            }
+        } while (true);
+    }
+
     /**
      * Méthode qui permet de lancer un tour du jeu
      * @param player : le joueur courant (0 pour Human et 1 pour Computer)
      */
 
+    public void runTurn(int player) {
+        int choice;
+        boolean moved = false;	// drapeau qui determine si le d�placement du navire est réussi ou non
+        boolean hasShipNotHit = false;	// drapeau qui determine si le joueur a un navire non touché
+        // et peut donc exécuter une action de déplacement de navire ou non
+
+        // r�p�ter tant que le déplacement n'as pas réussi
+        do {
+            if (player == 0) {	// si c'est l'humain
+                choice = battleView.getMoveOrFire();	// avoir le choix de l'action (1 pour tir et 2 pour déplacement)
+                if (choice == -1) {		// le joueur dans ce cas veut quitter le jeu (en tapant "q")
+                    quit = true;
+                    break;	// arreter la boucle
+                }
+            } else {	// si c'est l'ordinateur
+                choice = (new Random()).nextInt(2)+1;	// avoir un choix d'action aléatoire
+            }
+            if (choice == 1) {	// si l'action est un d�placement
+                hasShipNotHit = hasShipNotHit(player);	// voir si le joueur a de navire non touché
+                if (hasShipNotHit) {				// si oui
+                    moved = move(player);		// tenter de déplacer le navire
+                    // si le d�placement a échoué (à cause d'un obstacle) afficher un message au joueur(humain)
+                    if (!moved && player == 0)
+                        battleView.showMessage("Human : Ship not moved! Try a new action");
+                }
+                else	// si tous les navires sont touchés
+                    if (player == 0)
+                        // afficher un message au joueur
+                        battleView.showMessage("Human : There are no ship not hit to move!");
+
+            } else {	// si l'action est un tir
+                fire(player);	// exécuter le tir
+            }
+        } while (choice == 1 && (!hasShipNotHit || (hasShipNotHit && !moved)));
+    }
 
 
     /**
@@ -452,9 +540,5 @@ public class NavalBattleController {
             }
         }
     }
-
-
-
-
 
 }
