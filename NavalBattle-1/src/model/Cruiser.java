@@ -3,7 +3,6 @@ package model;
 /**
  * Classe Cruiser qui hérite de la classe Ship
  * Représente un croiseur
- * @author
  *
  */
 public class Cruiser extends Ship {

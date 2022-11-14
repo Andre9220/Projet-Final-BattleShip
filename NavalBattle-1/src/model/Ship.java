@@ -5,22 +5,21 @@ import java.util.Random;
 
 /**
  * Classe abstraite Ship qui représente un navire
- * @author
  *
  */
 public abstract class Ship {
-    protected int length;	// nombre de cases occup�es par le navire
+    protected int length;	// nombre de cases occupées par le navire
     protected int health;	// nombre de cases saines
     protected int firePower;	// puissance de tir
     protected Coordinates position;		// coordonnées de la 1ère case occupée par le navire
     protected boolean vertical;		// vrai si le navire est placé verticalement, faux sinon
     protected ArrayList<Coordinates> area;	// la liste des coordonnées des cases occupées par le navire
-    protected char ch;	// le caract�re repr�sentant le navire
+    protected char ch;	// le caractère représentant le navire
 
     /**
      * Constructeur
      * @param length : longueur de navire (nbr de cases)
-     * @param firePower : puissance de tire
+     * @param firePower : puissance de tir
      */
     protected Ship(int length, int firePower) {
         this.length = length;
@@ -86,7 +85,7 @@ public abstract class Ship {
     }
 
     /**
-     * @return ch : le caract�re qui repr�sente le navire
+     * @return ch : le caractère qui représente le navire
      */
     public char getChar() {
         return ch;
@@ -95,7 +94,7 @@ public abstract class Ship {
     /**
      * Méthode qui modifie (dans la zone occupée) la valeur de la case vers "détruite"
      * et décrémente la valeur de health (la santé du navire)
-     * @param coor
+     * @param coor : Coordonnée sur laquelle on va tiré
      */
     public void destroyAt(Coordinates coor) {
         if (!area.get(area.indexOf(coor)).isDestroyed()) {
@@ -122,7 +121,7 @@ public abstract class Ship {
 
     /**
      * Modifie la valeur de health
-     * @param health
+     * @param health : Nouvel attribut à set
      */
     public void setHealth(int health) {
         this.health = health;
@@ -130,7 +129,7 @@ public abstract class Ship {
 
     /**
      * Modifie la position du navire
-     * @param position (la 1ère case occupée)
+     * @param position : (la 1ère case occupée)
      */
     public void setPosition(Coordinates position) {
         this.position = position;
@@ -138,7 +137,7 @@ public abstract class Ship {
 
     /**
      * Modifie l'orientation du navire
-     * @param vertical
+     * @param vertical : Nouvel attribut à set
      */
     public void setVertical(boolean vertical) {
         this.vertical = vertical;

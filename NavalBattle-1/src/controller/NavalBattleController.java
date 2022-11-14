@@ -19,9 +19,8 @@ import view.NavalBattleView;
 
 /**
  *
- * Classe NavalBattleController : la classe qui control le jeu
+ * Classe NavalBattleController : la classe qui controle le jeu
  * et execute les actions du joueur
- * @author
  */
 public class NavalBattleController {
 
@@ -325,12 +324,13 @@ public class NavalBattleController {
     }
 
     /**
-     * M�thode qui permet d'ex�cuter l'action de d�placement
-     * la m�thode permet d'avoir les coordonn�es du navire concern� et la direction souhait�e
-     * (demander au joueur si c'est un humain, ou g�n�rer al�atoirement si le joueur = Computer)
-     * @param player : joueur qui veut d�placer un navire
-     * @return vrai si le d�placement est effectu�, faux sinon
+     * Méthode qui permet d'exécuter l'action de déplacement
+     * la m�thode permet d'avoir les coordonnées du navire concerné et la direction souhaitée
+     * (demander au joueur si c'est un humain, ou générer aléatoirement si le joueur = Computer)
+     * @param player : joueur qui veut déplacer un navire
+     * @return vrai si le déplacement est effectué, faux sinon
      */
+
     public boolean move(int player) {
         Coordinates currCoor;
         Ship ship = null;
@@ -402,10 +402,10 @@ public class NavalBattleController {
 
 
     /**
-     * M�thode qui permet d'ex�cuter l'action de tir
-     * la m�thode permet d'avoir les coordonn�es du navire tireur et les coordonn�es de la cible
-     * (demander au joueur si c'est un humain, ou g�n�rer al�atoirement si le joueur = Computer)
-     * @param player : joueur qui veut d�placer un navire
+     * Méthode qui permet d'exécuter l'action de tir
+     * la méthode permet d'avoir les coordonnées du navire tireur et les coordonnées de la cible
+     * (demander au joueur si c'est un humain, ou générer aléatoirement si le joueur = Computer)
+     * @param player : joueur qui veut déplacer un navire
      */
     public void fire(int player) {
         flare = false;
@@ -540,5 +540,7 @@ public class NavalBattleController {
             }
         }
     }
+
+    /*DONE*/
 
 }

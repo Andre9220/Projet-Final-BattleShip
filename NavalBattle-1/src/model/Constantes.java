@@ -2,7 +2,6 @@ package model;
 
 /**
  * Classe Constantes qui définit toutes les constantes du programme
- * @author
  *
  */
 public class Constantes {

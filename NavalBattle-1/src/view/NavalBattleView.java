@@ -10,7 +10,6 @@ import model.Game;
  * Classe qui représente l'interface entre l'utilisateur et le Controleur du jeu
  * elle permet d'afficher des messages et des menus vers le console
  * et de lire les entrées du clavier de l'utilisateur
- * @author
  */
 public class NavalBattleView {
     // créer un objet Scanner pour lire les entrée clavier
@@ -130,7 +129,7 @@ public class NavalBattleView {
      * @param isVertical
      * @return si le navire est plac� verticalement : 1 pour UP et 2 pour DOWN
      * 		   sinon : 1 pour LEFT et 2 pour RIGHT,
-     * @return -1 si le joueur tape 'q' ou 'Q'
+     *         -1 si le joueur tape 'q' ou 'Q'
      */
     public int getMoveBy(boolean isVertical) {
         String strChoice; int choice = 0;
@@ -229,10 +228,10 @@ public class NavalBattleView {
 
     /**
      * Méthode pour afficher les deux grilles du joueur human
-     * @param game
-     * @param playerIndex
-     * @param isFlare : determine si la grille Ennemi doit etre d�voil� (4 cases de la cible)
-     * @param CoorFlare : (la cible si c'est une fus�e �clairante)
+     * @param game : Objet Game
+     * @param playerIndex : Joueur 0 si c'est human sinon c'est computer
+     * @param isFlare : determine si la grille Ennemi doit etre dévoilé (4 cases de la cible)
+     * @param CoorFlare : (la cible si c'est une fusée éclairante)
      */
     public void showGrids(Game game, int playerIndex, boolean isFlare, Coordinates CoorFlare) {
         String horSepOwnGrid = (new String("----")).repeat(game.human.getOwnGrid().nbrCols+1);

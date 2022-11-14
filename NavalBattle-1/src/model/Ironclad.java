@@ -3,7 +3,6 @@ package model;
 /**
  * Classe Cruiser qui hérite de la classe Ship
  * Représente un cuirassé
- * @author
  *
  */
 public class Ironclad extends Ship {

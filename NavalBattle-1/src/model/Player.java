@@ -1,10 +1,10 @@
 package model;
 
+import java.io.IOException;
 import java.util.Random;
 
 /**
  * Classe abstraite Player qui représente un joueur
- * @author
  *
  */
 public class Player {
@@ -18,7 +18,10 @@ public class Player {
 
 
 
-
+    /**
+     * Méthode qui permet de sauvegarder la partie dans le fichier "filename"
+     * @param type : type du joueur (human ou computer)
+     */
     protected Player(String type) {
         this.type = type;
 
@@ -145,7 +148,7 @@ public class Player {
     }
 
     /**
-     * @param coor : les coordonn�es de la case
+     * @param coor : les coordonnées de la case
      * @return : le navire dans la flotte qui occupe la case coor,
      * 			null si aucun navire ne l'occupe
      */
@@ -160,7 +163,7 @@ public class Player {
 
     /**
      * Modifie la valeur du champ "destroyed" dans la case de la grille
-     * @param coor : la case concern�e
+     * @param coor : la case concernée
      */
 
     public void destroyAt(Coordinates coor) {
@@ -168,7 +171,7 @@ public class Player {
     }
 
     /**
-     * @return le nombre total des cases saines dans la flotte (la sant� de la flotte)
+     * @return le nombre total des cases saines dans la flotte (la santé de la flotte)
      */
     public int getFleetHealth() {
         int health=0;

@@ -2,6 +2,11 @@ package main;
 
 import controller.NavalBattleController;
 
+/**
+ * Classe main qui lance le jeu
+ *
+ */
+
 public class Driver {
 
     public static void main(String[] args) {

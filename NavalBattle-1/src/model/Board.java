@@ -13,10 +13,10 @@ public class Board {
 
     /**
      * Constructeur de la classe Board
-     * @param nbrRows
-     * @param nbrCols
-     * @param ch
      * Permet d'initialiser un plateau de jeu avec le bon nombre de lignes et de colonnes
+     * @param nbrRows : Nombre de lignes
+     * @param nbrCols : Nombre de colonnes
+     * @param ch : caractère de la case
      */
     public Board(int nbrRows, int nbrCols, char ch) {
         this.nbrRows = nbrRows;
@@ -41,12 +41,17 @@ public class Board {
 
     /**
      * Modifie le caractère dans une case donnée en paramètre
-     * @param coor
-     * @param ch
+     * @param coor : Case ciblé
+     * @param ch : Caractère souhaité dans la case
      */
     public void setChar(Coordinates coor, char ch) {
         grid[coor.getRow()][coor.getCol()].setCh(ch);  //
     }
+
+    /**
+     * @param coor : les coordonnées de la case
+     * @return : la case dans la grille qui correspond à "coor"
+     */
 
     public Coordinates getCoor(Coordinates coor) {
         for(int i=0; i<nbrRows; i++) {

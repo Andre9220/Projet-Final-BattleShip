@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * Classe qui gère la partie
+ */
 public class Game {
     public Player human, computer, winner;
     public int currentPlayer;
@@ -24,7 +27,7 @@ public class Game {
     }
 
     /**
-     * Méthode qui initialise (à tester)
+     * Méthode qui initialise
      */
     public void initialize() {
         // placer les navires dans les grilles de chaque joueur
@@ -42,7 +45,7 @@ public class Game {
 
     /**
      * Méthode qui permet de sauvegarder la partie dans le fichier "filename"
-     * @param filename
+     * @param filename : nom du fichier à ouvrir pour y écrire : game.txt
      * @throws IOException
      */
     public void saveToFile(String filename) throws IOException {
@@ -112,7 +115,7 @@ public class Game {
 
     /**
      * Méthode qui permet de charger la partie sauvegardée dans le fichier "filename"
-     * @param filename
+     * @param filename : nom du fichier à ouvrir pour lire : game.txt
      * @throws IOException
      */
     public void loadFromFile(String filename) throws IOException {

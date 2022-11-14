@@ -2,7 +2,6 @@ package model;
 
 /**
  * Classe Coordinates qui représente une case dans la grille
- * @author 
  *
  */
 public class Coordinates {
@@ -13,8 +12,8 @@ public class Coordinates {
 	
 	/**
 	 * Constructeur à seulement deux paramètres (la ligne et la colonne)
-	 * @param x
-	 * @param y
+	 * @param x : Ligne de la case
+	 * @param y : Colonne de la case
 	 */
 	public Coordinates(int x, int y) {
 		this.row = x;
@@ -25,9 +24,9 @@ public class Coordinates {
 	
 	/**
 	 * Constructeur à trois paramètres (la ligne, la colonne et le caractère)
-	 * @param x
-	 * @param y
-	 * @param ch
+	 * @param x : Ligne de la case
+	 * @param y : Colonne de la case
+	 * @param ch : caractère de la case
 	 */
 	public Coordinates(int x, int y, char ch) {
 		this.row = x;
@@ -39,10 +38,11 @@ public class Coordinates {
 	/**
 	 * redéfinition de la méthode equals pour l'exploiter dans la méthode
 	 * "contains(Coordinates)" du champ "area"
+	 * @param secondCoor : Coordonnées à testé avec celle passé en paramètre
 	 */
 	@Override
-	public boolean equals(Object secondCoor) {
-		return (this.row == ((Coordinates)secondCoor).row && this.col == ((Coordinates)secondCoor).col);	
+	public boolean equals(Coordinates secondCoor) {
+		return (this.row == ((Coordinates)secondCoor).row && this.col == ((Coordinates)secondCoor).col);
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class Coordinates {
 
 	/**
 	 * Modifie la ligne
-	 * @param row
+	 * @param row : paramètre set
 	 */
 	public void setRow(int row) {
 		this.row = row;
@@ -92,7 +92,7 @@ public class Coordinates {
 
 	/**
 	 * Modifie la colonne
-	 * @param col
+	 * @param col : paramètre set
 	 */
 	public void setCol(int col) {
 		this.col = col;
@@ -100,7 +100,7 @@ public class Coordinates {
 
 	/**
 	 * Modifie le caractère
-	 * @param ch
+	 * @param ch : paramètre set
 	 */
 	public void setCh(Character ch) {
 		this.ch = ch;
