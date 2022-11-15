@@ -2,7 +2,7 @@ package main;
 
 import controller.NavalBattleController;
 
-/**
+/**Q
  * Classe main qui lance le jeu
  *
  */

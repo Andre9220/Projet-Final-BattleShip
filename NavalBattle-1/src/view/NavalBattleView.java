@@ -35,8 +35,8 @@ public class NavalBattleView {
         System.out.println("\t1. Play a game");
         System.out.println("\t2. Load a game");
         System.out.println("\t3. Help");
-        System.out.println("\t4. Exit");
-        System.out.println("Choose an option (1 to 4) : ");
+        System.out.println("\tQ. Quit");
+        System.out.println("Choose an option (1 to 3) | Choose (Q or q) to Quit the game: ");
 
     }
 
@@ -49,7 +49,7 @@ public class NavalBattleView {
         do {
             showMenu();
             strChoice = sc.nextLine();
-            if (strChoice.equalsIgnoreCase("q"))
+            if (strChoice.equalsIgnoreCase("Q"))
                 choice = 4;
             else {
                 try {
@@ -106,9 +106,11 @@ public class NavalBattleView {
         do {
             System.out.println("\t1. Move ship");
             System.out.println("\t2. Fire");
-            System.out.println("Choose an action (1 or 2) : ");
+            System.out.println("\tQ. Quit ");
+
+            System.out.println("Choose an action (1 or 2) | Choose (Q or q) to go Back : ");
             strChoice = sc.nextLine();
-            if (strChoice.equalsIgnoreCase("q")) {
+            if (strChoice.equalsIgnoreCase("Q")) {
                 choice = -1;
                 break;
             }
@@ -137,9 +139,11 @@ public class NavalBattleView {
             do {
                 System.out.println("\t1. Move UP");
                 System.out.println("\t2. Move DOWN");
-                System.out.println("Choose a direction (1 or 2) : ");
+                System.out.println("\tQ. Quit");
+
+                System.out.println("Choose a direction (1 or 2) | Choose (Q or q) to go Back : ");
                 strChoice = sc.nextLine();
-                if (strChoice.equalsIgnoreCase("q")) {
+                if (strChoice.equalsIgnoreCase("Q")) {
                     choice = -1;
                     break;
                 }
@@ -155,9 +159,10 @@ public class NavalBattleView {
             do {
                 System.out.println("\t1. Move LEFT");
                 System.out.println("\t2. Move RIGHT");
-                System.out.println("Choose a direction (1 or 2) : ");
+                System.out.println("\tq. Quit");
+                System.out.println("Choose a direction (1 or 2) | Choose (Q or q) to go Back: ");
                 strChoice = sc.nextLine();
-                if (strChoice.equalsIgnoreCase("q")) {
+                if (strChoice.equalsIgnoreCase("Q")) {
                     choice = -1;
                     break;
                 }
@@ -269,11 +274,15 @@ public class NavalBattleView {
      * Méthode qui affiche les règles du jeu
      */
     public void showHelp() {
-        System.out.println("*** Game rules **");
-        System.out.println("Ce jeu représente un jeu de bataille navale où le but est de couler entièrement la flotte annemie \n" +
+        System.out.println("********************************* Game rules *********************************\n\n");
+        System.out.println("Ce jeu représente un jeu de bataille navale où le but est de couler entièrement la flotte ennemie \n" +
                 "Vous avez exactement la même flotte que l'adversaire, mais chose qui diffère du jeu original est que vous pouvez déplacer vos navires dans le sens sur lequel il est \n" +
-                "si ils n'ont pas été touché. Chaque navire à une puissance de tir respectif. Ironclad : 9 cases, Cruiser : 4 cases \n" +
-                "Destroyeur et Submarine on tout les deux une puissance de 1 case. Vous pouvez sauvegardé votre partie en appuyant sur q ou Q à tout moment \n");
+                "si ils n'ont pas été touché.\n\nChaque navire à une puissance de tir respective :  \nCuirassé : 9 cases \nCroiseur : 4 cases \n" +
+                "Destroyer  : 1 case \nSous-marin : 1 case \n\nChaque navire à une vie respective : \nCuirassé : 7 cases \nCroiseur : 5 cases \nDestroyeur  : 3 case \nSous-marin : 1 case \n\n"+
+                "!!! Le premier tir du Destroyer est une fusée éclairante dévoilant une zone de 16 cases !!!\n" +
+                "!!!             Le Sous-marin ne peut être coulé que par un autre Sous-marin            !!!\n\n" );
+        System.out.println("********************************* Game rules *********************************\n\n");
+
 
     }
 }

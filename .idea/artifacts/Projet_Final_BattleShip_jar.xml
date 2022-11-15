@@ -1,7 +1,10 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Projet-Final-BattleShip:jar">
-    <output-path>$PROJECT_DIR$</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/Projet_Final_BattleShip_jar</output-path>
     <root id="archive" name="Projet-Final-BattleShip.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$APPLICATION_HOME_DIR$/jbr/Projet-Final-BattleShip/NavalBattle-1/src/META-INF/MANIFEST.MF" />
+      </element>
       <element id="module-output" name="Projet-Final-BattleShip" />
     </root>
   </artifact>

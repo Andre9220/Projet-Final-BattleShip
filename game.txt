@@ -1,18 +1,18 @@
- , , , , , , , , , , ,D, , , 
- , , , , , ,C,C,C,C,C,D, ,S, 
- , , , , ,B, , , , , ,D, , , 
- , , ,D, ,B, , , , , , , , , 
- , , ,D, ,B, , , , , , , , , 
- , , ,D, ,B, , , , , , , , , 
- , , ,S, ,B, , , , , , , , , 
- , , , , ,B, , , , , , , , , 
- , , , ,D,B,S, , , , , , , , 
- , , , ,D, , , , , , , , , , 
- , , , ,D, , , , , , , , , , 
- , , , , , ,C,C,C,C,C, , , , 
- , , , , , , , , , , , , ,S, 
- , , , , , , , , , , , , , , 
- , , , , , , , , , , , , , , 
+C,C,C,C,C, , , , , ,C,C,C,C,D
+ ,S,D,B,B, , , , , , , ,B, ,D
+S, ,D,B,B, , ,D,D,D,D, ,B, ,D
+ , ,D,B,B, , , , , , , ,B,S, 
+S, , ,B,B,D, , ,C, , , ,B, , 
+ , , ,B,B,D, , ,C, , , ,B, , 
+ , , ,B,B,D, , ,C,S,C, ,B, ,S
+C, ,D,D,D, , , ,C, ,C, ,B, , 
+C, , ,S, , , , ,C, ,C, ,D, , 
+C, , , , , , , , , ,C, ,D, , 
+C, , , , , , , , , ,C, ,D, , 
+S, , , , ,D, , , , , , , , , 
+ , , , , ,D, , ,D, , , , , , 
+ , , , , ,D,C,C,C,C,C, , , ,S
+ , , , , , , , ,D, , , , , ,S
  Grille ennemi du joueur Human : 
  , , , , , , , , , , , , , , 
  , , , , , , , , , , , , , , 
@@ -30,21 +30,21 @@
  , , , , , , , , , , , , , , 
  , , , , , , , , , , , , , , 
  Grille ennemi du joueur Computer : 
- , , , , , , , , , , , , , , 
- , , , , , , , , , , , , , , 
- ,D, , , , , , ,S, , , , , , 
- ,D, , , ,C,C,C,C,C, , , , ,S
- ,D, , , , , , , , , , , , , 
- , , , ,C,C,C,C,C, , , , , , 
- , , , , , , , , , , , , , , 
- , , , , , , , , , , , , , ,S
- , , , , , , , , , , , , , , 
- , ,B,B,B,B,B,B,B, , , , ,D, 
- , , , , , , , , , , , , ,D, 
- , , , , , , , , , , , , ,D, 
- , , , ,D,D,D, , , , , , , , 
- , , , , , , , , ,S, , , , , 
- , , , , , , , , , , , , , , 
+ ,D,D,D,S, , , ,B, , ,D,D, , 
+ , , , , , , , ,B, , ,D,D, ,S
+ , , , , , , ,B,B, , ,D,D, , 
+C,C,C,C,C, ,B,B,B, , , ,S, , 
+ , , , , , ,B,B,B, , , ,D,D,D
+ , , , , , ,B,C,C,C,C,C,D,D,D
+C,C,C,C,C, ,B,B,B, ,S, , , , 
+ , , , , , ,B,B, , , , , , , 
+ ,D,D,D, , ,B,B, , , , , , ,S
+ , , , , ,D,B, , , ,C,S,C,C,C
+D,D,D, , ,D, , , , , , , ,S, 
+D,D,D, , ,D, , ,S, ,S, , , , 
+ , , , , , ,S, ,C,C,C,C,C, , 
+ , , , , , ,S, , , , , , , , 
+ , , , , ,S, , , , , , , , , 
  Grille ennemi du joueur Computer : 
  , , , , , , , , , , , , , , 
  , , , , , , , , , , , , , , 
@@ -62,38 +62,94 @@
  , , , , , , , , , , , , , , 
  , , , , , , , , , , , , , , 
 7
-2,5
+1,12
 true
-2,5,B,false
-3,5,B,false
-4,5,B,false
-5,5,B,false
-6,5,B,false
-7,5,B,false
-8,5,B,false
+1,12,B,false
+2,12,B,false
+3,12,B,false
+4,12,B,false
+5,12,B,false
+6,12,B,false
+7,12,B,false
 5
-11,6
+13,6
 false
-11,6,C,false
-11,7,C,false
-11,8,C,false
-11,9,C,false
-11,10,C,false
+13,6,C,false
+13,7,C,false
+13,8,C,false
+13,9,C,false
+13,10,C,false
 5
-1,6
-false
-1,6,C,false
-1,7,C,false
-1,8,C,false
-1,9,C,false
-1,10,C,false
+4,8
+true
+4,8,C,false
+5,8,C,false
+6,8,C,false
+7,8,C,false
+8,8,C,false
 3
-8,4
+8,12
 true
-8,4,D,false
-9,4,D,false
-10,4,D,false
+8,12,D,false
+9,12,D,false
+10,12,D,false
 true
+3
+7,2
+false
+7,2,D,false
+7,3,D,false
+7,4,D,false
+true
+3
+1,2
+true
+1,2,D,false
+2,2,D,false
+3,2,D,false
+true
+1
+8,3
+true
+8,3,S,false
+1
+4,0
+false
+4,0,S,false
+1
+14,14
+false
+14,14,S,false
+1
+6,14
+true
+6,14,S,false
+7
+3,6
+true
+3,6,B,false
+4,6,B,false
+5,6,B,false
+6,6,B,false
+7,6,B,false
+8,6,B,false
+9,6,B,false
+5
+3,0
+false
+3,0,C,false
+3,1,C,false
+3,2,C,false
+3,3,C,false
+3,4,C,false
+5
+5,7
+false
+5,7,C,false
+5,8,C,false
+5,9,C,false
+5,10,C,false
+5,11,C,false
 3
 0,11
 true
@@ -102,88 +158,32 @@ true
 2,11,D,false
 true
 3
-3,3
-true
-3,3,D,false
-4,3,D,false
-5,3,D,false
-true
-1
-1,13
+8,1
 false
-1,13,S,false
-1
-12,13
-true
-12,13,S,false
-1
-8,6
-true
-8,6,S,false
-1
-6,3
-false
-6,3,S,false
-7
-9,2
-false
-9,2,B,false
-9,3,B,false
-9,4,B,false
-9,5,B,false
-9,6,B,false
-9,7,B,false
-9,8,B,false
-5
-3,5
-false
-3,5,C,false
-3,6,C,false
-3,7,C,false
-3,8,C,false
-3,9,C,false
-5
-5,4
-false
-5,4,C,false
-5,5,C,false
-5,6,C,false
-5,7,C,false
-5,8,C,false
-3
-2,1
-true
-2,1,D,false
-3,1,D,false
-4,1,D,false
+8,1,D,false
+8,2,D,false
+8,3,D,false
 true
 3
-12,4
+11,0
 false
-12,4,D,false
-12,5,D,false
-12,6,D,false
-true
-3
-9,13
-true
-9,13,D,false
-10,13,D,false
-11,13,D,false
+11,0,D,false
+11,1,D,false
+11,2,D,false
 true
 1
-3,14
+12,6
 false
-3,14,S,false
+12,6,S,false
 1
-2,8
+1,14
 false
-2,8,S,false
+1,14,S,false
 1
-7,14
+13,6
 true
-7,14,S,false
+13,6,S,false
 1
-13,9
-true
-13,9,S,false
+8,14
+false
+8,14,S,false
