@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Projet-Final-BattleShip:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Projet_Final_BattleShip_jar</output-path>
+    <output-path>$PROJECT_DIR$</output-path>
     <root id="archive" name="Projet-Final-BattleShip.jar">
       <element id="module-output" name="Projet-Final-BattleShip" />
     </root>
